@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Alex",
+        "comment" : "I love this product so much. It was really value for money.",
+        "rating" : 5
+    },
+    {
+        "name" : "Roy",
+        "comment" : "I recomend the camera. But I think it should price some less money.",
+        "rating" : 4
+    },
+    {
+        "name" : "Sonia",
+        "comment" : "I got my camera broken. But the seller said he will replace it.",
+        "rating" : 3
+    },
+    {
+        "name" : "Samin",
+        "comment" : "Totally waste of money. My phone camera is far better",
+        "rating" : 1
+    },
+    {
+        "name" : "Swityy",
+        "comment" : "This is a wonderful camera. Loved this.",
+        "rating" : 5
+    },
+    {
+        "name" : "Maruf",
+        "comment" : "I dont like the color. But overall good.",
+        "rating" : 4
+    }
+]

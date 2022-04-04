@@ -1,9 +1,19 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
+import Review from '../Reviews/Review';
 
 const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
+  useEffect( () =>{
+fetch("review.json")
+.then(res => res.json())
+.then(data => setReviews(data));
+
+  }, [])
   return (
     <div>
-      <h1>This is review page</h1>
+     {
+       reviews?.map(review => <Review key={review.name} review={review}></Review>)
+     }
     </div>
   );
 };
