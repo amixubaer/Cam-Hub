@@ -10,7 +10,7 @@ const Home = () => {
   return (
    <div className="container">
      {/* header part */}
-      <div className="flex">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-items-center">
       <div className="text-center my-5 px-10"> 
       <h1 className="text-5xl font-bold my-5 text-red-700">Click the Best picture</h1>
       <h1 className="text-5xl font-semi-bold my-5 text-purple-700">Your best camera</h1>
