@@ -1,16 +1,12 @@
-import React , {useEffect, useState} from "react";
+import React from "react";
 import '../Navbar/Navbar.css';
 import Review from "../Reviews/Review";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import useReviews from "../../hooks/useReviews";
 
 const Home = () => {
-  const [reviews, setReviews] = useState([]);
-  useEffect( () =>{
-fetch("review.json")
-.then(res => res.json())
-.then(data => setReviews(data));
-
-  }, [])
+  const [reviews, setReviews] = useReviews();
+ 
   return (
    <div className="container">
      {/* header part */}
@@ -19,7 +15,7 @@ fetch("review.json")
       <h1 className="text-5xl font-bold my-5 text-red-700">Click the Best picture</h1>
       <h1 className="text-5xl font-semi-bold my-5 text-purple-700">Your best camera</h1>
       <p className="text-3xl ">Buy the best camera of the market from us. Don't miss the chance. Come fast and grab the deal</p>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Live Demo</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">Live Demo</button>
       </div>
 
       <div>
