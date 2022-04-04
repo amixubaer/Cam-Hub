@@ -1,38 +1,47 @@
-import React from 'react';
-import './Navbar.css';
-import Link from '../Link/Link';
+import React from "react";
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
-    const routes = [
-        {
-            id: 1, name:'Home', link: '/home'
-        },
-        {
-            id: 2, name:'Reviews', link: '/reviews'
-        },
-        {
-            id: 3, name:'Dashboard', link: '/dashboard'
-        },
-        {
-            id: 4, name:'Blog', link: '/blog'
-        },
-        {
-            id: 5, name:'About', link: '/about'
-        },
 
-    ]
-    return (
-        <nav className='bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 mx-auto'>
-            <ul className='md:flex flex-wrap justify-between items-center mx-auto'>
-                {
-                    routes.map(route => <Link
-                        key={route.id} 
-                        route={route} className=''>
-
-                        </Link> )
-                }
-            </ul>
-        </nav>
-    );
+  return (
+    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <NavLink
+          className={({ isActive }) => (isActive ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "text-gray-100")}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "text-gray-100")}
+          to="/reviews"
+        >
+          Reviews
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "text-gray-100")}
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "text-gray-100")}
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "text-gray-100")}
+          to="/about"
+        >
+          About
+        </NavLink>
+     
+       
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
