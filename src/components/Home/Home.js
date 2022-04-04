@@ -1,6 +1,16 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
 import '../Navbar/Navbar.css';
+import Review from "../Reviews/Review";
+import { Outlet, Link } from "react-router-dom";
+
 const Home = () => {
+  const [reviews, setReviews] = useState([]);
+  useEffect( () =>{
+fetch("review.json")
+.then(res => res.json())
+.then(data => setReviews(data));
+
+  }, [])
   return (
    <div className="container">
      {/* header part */}
@@ -19,6 +29,18 @@ const Home = () => {
 {/* Review part */}
 <div>
   <h1 className="text-center font-bold text-5xl">Reviews</h1>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          {reviews.slice(0, 3).map((review) => (
+            <Review review={review} key={review.id}></Review>
+          ))}
+        </div>
+
+        <Link to="reviews" className="flex justify-center">
+          <button className="my-10 bg-indigo-600 rounded py-2 font-bold text-cyan-50 px-20">
+            See All Reviews
+          </button>
+        </Link>
+  
 </div>
    </div>
   );
